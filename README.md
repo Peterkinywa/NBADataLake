@@ -1,13 +1,88 @@
 # NBADataLake
-This repository contains the nba_datalake.py script, which automates the creation of a data lake for NBA analytics using AWS services. The script integrates Amazon S3, AWS Glue, and Amazon Athena, and sets up the infrastructure needed to store and query NBA-related data.
 
-# Overview
-The nba_datalake.py script performs the following actions:
+This repository contains scripts to automate the creation and deletion of a data lake for NBA analytics using AWS services. The scripts integrate Amazon S3, AWS Glue, and Amazon Athena, and set up the infrastructure needed to store and query NBA-related data.
 
-Creates an Amazon S3 bucket to store raw and processed data.
-Uploads sample NBA data (JSON format) to the S3 bucket.
-Creates an AWS Glue database and an external table for querying the data.
-Configures Amazon Athena for querying data stored in the S3 bucket.
+## Overview
 
-# Prerequisites
-Before running the script, ensure you have the following:
+The `nba_datalake.py` script performs the following actions:
+- Creates an Amazon S3 bucket to store raw and processed data.
+- Uploads NBA data (JSON format) to the S3 bucket.
+- Creates an AWS Glue database and an external table for querying the data.
+- Configures Amazon Athena for querying data stored in the S3 bucket.
+
+The `delete_resources.py` script performs the following actions:
+- Deletes the Amazon S3 bucket and its contents.
+- Deletes the AWS Glue database and associated tables.
+- Deletes Athena query results stored in the S3 bucket.
+
+## Prerequisites
+
+Before running the scripts, ensure you have the following:
+- AWS account with appropriate permissions.
+- AWS CLI configured with your credentials.
+- Python 3.6 or higher installed.
+- Required Python packages installed (see `requirements.txt`).
+
+## Setup
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/Peterkinywa/NBADataLake
+    cd NBADataLake
+    ```
+
+2. Install the required Python packages:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+3. Create a `.env` file in the [src](http://_vscodecontentref_/1) directory with the following content: 
+    ```
+    SPORTS_DATA_API_KEY=<your_sportsdata_api_key>
+    NBA_ENDPOINT=https://api.sportsdata.io/v3/nba/scores/json/Players
+    ```
+
+## Usage
+
+### Setting Up the Data Lake
+
+Run the [nba_datalake.py](http://_vscodecontentref_/2) script to set up the data lake:
+```sh
+python src/nba_datalake.py
+
+## The above script will:
+
+1. Create an S3 Bucket: An S3 bucket will be created to store raw and processed NBA data.
+2. Create a Glue Database: An AWS Glue database will be created to catalog the data.
+3. Fetch NBA Data: NBA data will be fetched from the Sportsdata.io API.
+4. Upload Data to S3: The fetched data will be uploaded to the S3 bucket.
+5. Create a Glue Table: An external table will be created in AWS Glue to query the data.
+6. Configure Athena: Amazon Athena will be configured to query the data stored in the S3 bucket.
+
+## Querying Data with Athena
+
+After setting up the data lake, you can query the data using Amazon Athena. Here are the steps:
+
+1. Go to the Amazon Athena console.
+2. Select the database created by the script.
+3. Write and execute SQL queries to analyze the NBA data.
+
+## Deleting the Data Lake Resources
+
+Run the delete_resources.py script to delete the data lake resources:
+```sh
+python delete_resources.py
+
+## The above script will:
+
+1. Delete the S3 Bucket: The S3 bucket and its contents will be deleted.
+2. Delete the Glue Database: The AWS Glue database and associated tables will be deleted.
+3. Delete Athena Query Results: Any Athena query results stored in the S3 bucket will be deleted.
+
+## IAM Policy
+
+The iam_role_policy.json file contains the IAM policy required for the scripts to execute successfully. Ensure that the IAM role or user running the scripts has this policy attached.
+
+## License
+
+This project is licensed under the MIT License.
