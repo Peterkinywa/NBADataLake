@@ -46,7 +46,8 @@ Before running the scripts, ensure you have the following:
 
 ### Setting Up the Data Lake
 
-Run the [nba_datalake.py] script to set up the data lake:
+Run the `nba_datalake.py` script to set up the data lake:
+
     ```sh
     python src/nba_datalake.py
     ```
@@ -70,7 +71,8 @@ After setting up the data lake, you can query the data using Amazon Athena. Here
 
 ## Deleting the Data Lake Resources
 
-Run the delete_resources.py script to delete the data lake resources:
+Run the `delete_resources.py` script to delete the data lake resources:
+
     ```sh
     python delete_resources.py
     ```
