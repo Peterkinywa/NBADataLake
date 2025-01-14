@@ -37,7 +37,7 @@ Before running the scripts, ensure you have the following:
     ```
 
 3. Create a `.env` file in the src directory with the following content:
-    ```
+    ```sh
     cd src
     touch .env
     ```
