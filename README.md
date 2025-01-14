@@ -36,7 +36,12 @@ Before running the scripts, ensure you have the following:
     pip install -r requirements.txt
     ```
 
-3. Create a `.env` file in the src directory with the following content: 
+3. Create a `.env` file in the src directory with the following content:
+    ```
+    cd src
+    touch .env
+    ```
+
     ```
     SPORTS_DATA_API_KEY=<your_sportsdata_api_key>
     NBA_ENDPOINT=https://api.sportsdata.io/v3/nba/scores/json/Players
