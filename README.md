@@ -36,7 +36,7 @@ Before running the scripts, ensure you have the following:
     pip install -r requirements.txt
     ```
 
-3. Create a `.env` file in the [src](http://_vscodecontentref_/1) directory with the following content: 
+3. Create a `.env` file in the src directory with the following content: 
     ```
     SPORTS_DATA_API_KEY=<your_sportsdata_api_key>
     NBA_ENDPOINT=https://api.sportsdata.io/v3/nba/scores/json/Players
@@ -46,10 +46,11 @@ Before running the scripts, ensure you have the following:
 
 ### Setting Up the Data Lake
 
-Run the [nba_datalake.py](http://_vscodecontentref_/2) script to set up the data lake:
-```sh
-python src/nba_datalake.py
-
+Run the [nba_datalake.py] script to set up the data lake:
+    ```sh
+    python src/nba_datalake.py
+    ```
+    
 ## The above script will:
 
 1. Create an S3 Bucket: An S3 bucket will be created to store raw and processed NBA data.
@@ -70,8 +71,9 @@ After setting up the data lake, you can query the data using Amazon Athena. Here
 ## Deleting the Data Lake Resources
 
 Run the delete_resources.py script to delete the data lake resources:
-```sh
-python delete_resources.py
+    ```sh
+    python delete_resources.py
+    ```
 
 ## The above script will:
 
