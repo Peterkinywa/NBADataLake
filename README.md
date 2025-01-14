@@ -52,7 +52,7 @@ Run the `nba_datalake.py` script to set up the data lake:
     python src/nba_datalake.py
     ```
     
-## The above script will:
+### The above script will:
 
 1. Create an S3 Bucket: An S3 bucket will be created to store raw and processed NBA data.
 2. Create a Glue Database: An AWS Glue database will be created to catalog the data.
@@ -61,7 +61,7 @@ Run the `nba_datalake.py` script to set up the data lake:
 5. Create a Glue Table: An external table will be created in AWS Glue to query the data.
 6. Configure Athena: Amazon Athena will be configured to query the data stored in the S3 bucket.
 
-## Querying Data with Athena
+### Querying Data with Athena
 
 After setting up the data lake, you can query the data using Amazon Athena. Here are the steps:
 
@@ -77,7 +77,7 @@ Run the `delete_resources.py` script to delete the data lake resources:
     python delete_resources.py
     ```
 
-## The above script will:
+### The above script will:
 
 1. Delete the S3 Bucket: The S3 bucket and its contents will be deleted.
 2. Delete the Glue Database: The AWS Glue database and associated tables will be deleted.
