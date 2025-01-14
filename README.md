@@ -79,6 +79,7 @@ After setting up the data lake, you can query the data using Amazon Athena. Here
 Run the `delete_resources.py` script to delete the data lake resources:
 
     ```sh
+    cd ..
     python delete_resources.py
     ```
 
